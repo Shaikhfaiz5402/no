@@ -11,7 +11,7 @@ const Banner = () => {
     className='flex flex-col md:flex-row md:items-start items-center justify-between px-8 min-md:pl-14 pt-10 bg-gradient-to-r from-[#0558FE] to-[#A9CFFF] max-w-6xl mx-3 md:mx-auto rounded-2xl overflow-hidden'>
 
         <div className='text-white'>
-            <h2 className='text-3xl font-medium'>"Are You a Proud Owner of a Luxury Bike?"</h2>
+            <h2 className='text-3xl font-medium'>"Want to be a Proud Owner of a Luxury Bike?"</h2>
             <p className='mt-2'>Book your bike. Unlock new adventures..</p>
             <p className='max-w-130'>Enjoy peace of mind — we handle insurance, rider verification, and secure payments so you can rent safely.</p>
 
