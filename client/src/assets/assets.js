@@ -1,4 +1,4 @@
-import logo from "./logo.svg";
+import logo from "./logo.png";
 import gmail_logo from "./gmail_logo.svg";
 import facebook_logo from "./facebook_logo.svg";
 import instagram_logo from "./instagram_logo.svg";
@@ -33,6 +33,7 @@ import location_icon_colored from "./location_icon_colored.svg"
 import testimonial_image_1 from "./testimonial_image_1.png"
 import testimonial_image_2 from "./testimonial_image_2.png"
 import main_car from "./main_car.png"
+import bike from "./bike.png"
 import banner_car_image from "./banner_car_image.png"
 import user_profile from "./user_profile.png"
 import upload_icon from "./upload_icon.svg"
@@ -79,6 +80,7 @@ export const assets = {
     testimonial_image_1,
     testimonial_image_2,
     main_car,
+    bike,
     banner_car_image,
     car_image1,
     upload_icon,
@@ -90,14 +92,14 @@ export const assets = {
 
 export const menuLinks = [
     { name: "Home", path: "/" },
-    { name: "Cars & Accessories", path: "/cars" },
+    { name: "Vehicles & Accessories", path: "/cars" },
     { name: "My Bookings", path: "/my-bookings" },
 ]
 
 export const ownerMenuLinks = [
     { name: "Dashboard", path: "/owner", icon: dashboardIcon, coloredIcon: dashboardIconColored },
-    { name: "Add car", path: "/owner/add-car", icon: addIcon, coloredIcon: addIconColored },
-    { name: "Manage Cars", path: "/owner/manage-cars", icon: carIcon, coloredIcon: carIconColored },
+    { name: "Add Vehicle", path: "/owner/add-car", icon: addIcon, coloredIcon: addIconColored },
+    { name: "Manage Vehicle", path: "/owner/manage-cars", icon: carIcon, coloredIcon: carIconColored },
     { name: "Manage Bookings", path: "/owner/manage-bookings", icon: listIcon, coloredIcon: listIconColored },
 ]
 

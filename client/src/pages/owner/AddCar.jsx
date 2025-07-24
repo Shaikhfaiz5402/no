@@ -63,7 +63,7 @@ const AddCar = () => {
   return (
     <div className='px-4 py-10 md:px-10 flex-1'>
 
-      <Title title="Add New Car" subTitle="Fill in details to list a new car for booking, including pricing, availability, and car specifications."/>
+      <Title title="Add New Vehicle" subTitle="Fill in details to list a new vehicle for booking, including pricing, availability, and vehicle specifications."/>
 
       <form onSubmit={onSubmitHandler} className='flex flex-col gap-5 text-gray-500 text-sm mt-6 max-w-xl'>
 
@@ -73,7 +73,7 @@ const AddCar = () => {
             <img src={image ? URL.createObjectURL(image) : assets.upload_icon} alt="" className='h-14 rounded cursor-pointer'/>
             <input type="file" id="car-image" accept="image/*" hidden onChange={e=> setImage(e.target.files[0])}/>
           </label>
-          <p className='text-sm text-gray-500'>Upload a picture of your car</p>
+          <p className='text-sm text-gray-500'>Upload a picture of your vehicle</p>
         </div>
 
         {/* Car Brand & Model */}
@@ -106,6 +106,9 @@ const AddCar = () => {
               <option value="Sedan">Sedan</option>
               <option value="SUV">SUV</option>
               <option value="Van">Van</option>
+              <option value="Bike">Bike</option>
+              <option value="Scooter">Scooter</option>
+             
             </select>
           </div>
         </div>
@@ -116,9 +119,10 @@ const AddCar = () => {
             <label>Transmission</label>
             <select onChange={e=> setCar({...car, transmission: e.target.value})} value={car.transmission} className='px-3 py-2 mt-1 border border-borderColor rounded-md outline-none'>
               <option value="">Select a transmission</option>
-              <option value="Automatic">Automatic</option>
+              <option value="">None</option>
+              {/* <option value="Automatic">Automatic</option>
               <option value="Manual">Manual</option>
-              <option value="Semi-Automatic">Semi-Automatic</option>
+              <option value="Semi-Automatic">Semi-Automatic</option> */}
             </select>
           </div>
           <div className='flex flex-col w-full'>
@@ -143,10 +147,8 @@ const AddCar = () => {
             <label>Location</label>
             <select onChange={e=> setCar({...car, location: e.target.value})} value={car.location} className='px-3 py-2 mt-1 border border-borderColor rounded-md outline-none'>
               <option value="">Select a location</option>
-              <option value="New York">New York</option>
-              <option value="Los Angeles">Los Angeles</option>
-              <option value="Houston">Houston</option>
-              <option value="Chicago">Chicago</option>
+              <option value="mumbai">Mumbai</option>
+              
             </select>
          </div>
         {/* Car Description */}

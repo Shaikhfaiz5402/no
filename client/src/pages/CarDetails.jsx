@@ -14,6 +14,7 @@ const CarDetails = () => {
 
   const navigate = useNavigate()
   const [car, setCar] = useState(null)
+  const [mobile, setMobile] = useState('')
   const currency = import.meta.env.VITE_CURRENCY
 
   const handleSubmit = async (e)=>{
@@ -122,7 +123,7 @@ const CarDetails = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.6 }}
 
-          onSubmit={handleSubmit} className='shadow-lg h-max sticky top-18 rounded-xl p-6 space-y-6 text-gray-500'>
+          onSubmit={handleSubmit} className='shadow-lg h-max sticky top-18 rounded-xl p-6 space-y-6 text-gray-500 md:w-96'>
 
             <p className='flex items-center justify-between text-2xl text-gray-800 font-semibold'>{currency}{car.pricePerDay}<span className='text-base text-gray-400 font-normal'>per day</span></p> 
 
@@ -138,6 +139,12 @@ const CarDetails = () => {
               <label htmlFor="return-date">Return Date</label>
               <input value={returnDate} onChange={(e)=>setReturnDate(e.target.value)}
               type="date" className='border border-borderColor px-3 py-2 rounded-lg' required id='return-date'/>
+            </div>
+
+            <div className='flex flex-col gap-2'>
+              <label htmlFor="mobile">Mobile Number</label>
+              <input value={mobile} onChange={(e)=>setMobile(e.target.value)}
+              type="number" className='border border-borderColor px-3 py-2 rounded-lg' required id='mobile' placeholder='e.g. 1234567890'/>
             </div>
 
             <button className='w-full bg-primary hover:bg-primary-dull transition-all py-3 font-medium text-white rounded-xl cursor-pointer'>Book Now</button>
