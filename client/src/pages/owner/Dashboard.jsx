@@ -81,8 +81,8 @@ const Dashboard = () => {
               </div>
 
               <div className='flex items-center gap-2 font-medium'>
-                <p className='text-sm text-gray-500'>{currency}{booking.price}</p>
-                <p className='px-3 py-0.5 border border-borderColor rounded-full text-sm'>{booking.status}</p>
+                <p className='text-sm text-gray-500'>₹{booking.price}</p>
+                <p className='px-3 py-0.5 border border-borderColor rounded-full text-sm'>₹{data.monthlyRevenue}</p>
               </div>
             </div>
           ))}
