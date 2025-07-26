@@ -51,6 +51,7 @@ const ManageBookings = () => {
               <th className="p-3 font-medium max-md:hidden">Date Range</th>
               <th className="p-3 font-medium">Total</th>
               <th className="p-3 font-medium max-md:hidden">Payment</th>
+              <th className="p-3 font-medium">Mobile</th> {/* Add this */}
               <th className="p-3 font-medium">Actions</th>
             </tr>
           </thead>
@@ -72,14 +73,14 @@ const ManageBookings = () => {
                 <td className='p-3 max-md:hidden'>
                   <span className='bg-gray-100 px-3 py-1 rounded-full text-xs'>offline</span>
                 </td>
-
+                <td className='p-3'>{booking.mobile || "N/A"}</td> {/* Add this */}
                 <td className='p-3'>
                   <select
                     onChange={e => {
-                      console.log(`Changing booking ${booking._id} status to`, e.target.value); // Debug log
+                      console.log(`Changing booking ${booking._id} status to`, e.target.value);
                       changeBookingStatus(booking._id, e.target.value);
                     }}
-                    value={booking.status || 'pending'} // Always controlled
+                    value={booking.status || 'pending'}
                     className='px-2 py-1.5 mt-1 text-gray-500 border border-borderColor rounded-md outline-none'
                   >
                     <option value="pending">Pending</option>
