@@ -58,7 +58,8 @@ export const createBooking = async (req, res) => {
       pickupDate,
       returnDate,
       price,
-      mobile, // ✅ Save mobile number
+      mobile,
+      status: "pending", // ✅ Ensure status is set
     });
 
     res.json({ success: true, message: "Booking Created" });
@@ -107,8 +108,12 @@ export const changeBookingStatus = async (req, res) => {
 
     const booking = await Booking.findById(bookingId);
 
+    if (!booking) {
+      return res.status(404).json({ success: false, message: "Booking not found" });
+    }
+
     if (booking.owner.toString() !== _id.toString()) {
-      return res.json({ success: false, message: "Unauthorized" });
+      return res.status(403).json({ success: false, message: "Unauthorized" });
     }
 
     booking.status = status;
