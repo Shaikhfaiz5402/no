@@ -75,13 +75,28 @@ const ManageBookings = () => {
 
                 <td className='p-3'>
                   {booking.status === 'pending' ? (
-                    <select onChange={e=> changeBookingStatus(booking._id, e.target.value)} value={booking.status} className='px-2 py-1.5 mt-1 text-gray-500 border border-borderColor rounded-md outline-none'>
+                    <select
+                      onChange={e => {
+                        console.log(`Changing booking ${booking._id} status to`, e.target.value); // Debug log
+                        changeBookingStatus(booking._id, e.target.value);
+                      }}
+                      value={booking.status || 'pending'} // Ensure value is always defined
+                      className='px-2 py-1.5 mt-1 text-gray-500 border border-borderColor rounded-md outline-none'
+                    >
                       <option value="pending">Pending</option>
                       <option value="cancelled">Cancelled</option>
                       <option value="confirmed">Confirmed</option>
                     </select>
-                  ): (
-                    <span className={`px-3 py-1 rounded-full text-xs font-semibold ${booking.status === 'confirmed' ? 'bg-green-100 text-green-500' : 'bg-red-100 text-red-500'}`}>{booking.status}</span>
+                  ) : (
+                    <span
+                      className={`px-3 py-1 rounded-full text-xs font-semibold ${
+                        booking.status === 'confirmed'
+                          ? 'bg-green-100 text-green-500'
+                          : 'bg-red-100 text-red-500'
+                      }`}
+                    >
+                      {booking.status || 'pending'}
+                    </span>
                   )}
                 </td>
 
